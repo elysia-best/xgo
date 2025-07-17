@@ -51,6 +51,10 @@ if [ "$(semver compare "$GO_VERSION" "1.16.0")" -ge 0 ]; then
   xgobootstrap linux riscv64 riscv64-linux-gnu-gcc
 fi
 
+if [ "$(semver compare "$GO_VERSION" "1.19.0")" -ge 0 ]; then
+  xgobootstrap linux loong64 loongarch64-linux-gnu-gcc
+fi
+
 xgobootstrap windows amd64 x86_64-w64-mingw32-gcc
 xgobootstrap windows 386 i686-w64-mingw32-gcc
 
